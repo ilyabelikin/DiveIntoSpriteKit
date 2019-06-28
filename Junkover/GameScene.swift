@@ -262,7 +262,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(bestScoresLabel)
         
+        junkTimer?.invalidate()
         junkTimer = nil
+        
+        energyTimer?.invalidate()
         energyTimer = nil
         
         // Each new game scene is slower loosing FPS
