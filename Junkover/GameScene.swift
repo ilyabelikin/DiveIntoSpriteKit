@@ -12,9 +12,6 @@ import CoreMotion
 @objcMembers
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let motionManager = CMMotionManager()
-    
-    var junkTimer: Timer?
-    var energyTimer: Timer?
 
     let player = SKSpriteNode(imageNamed: "player-rocket.png")
     
@@ -74,11 +71,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(player)
         
-        junkTimer = Timer.scheduledTimer(timeInterval: 0.45, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        run(SKAction.repeatForever(SKAction.sequence([
+            SKAction.run(createEnemy),
+            SKAction.wait(forDuration: 0.45)
+            ])))
         
-        energyTimer = Timer.scheduledTimer(timeInterval: 1.6, target: self, selector: #selector(createBonus), userInfo: nil, repeats: true)
+        run(SKAction.repeatForever(SKAction.sequence([
+            SKAction.run(createBonus),
+            SKAction.wait(forDuration: 1.6)
+            ])))
         
-        print("Initial setup is done. IgnoreSiblingOrder is \(self.view!.ignoresSiblingOrder)")
+        print("Initial setup is done.")
         
     }
 
@@ -261,12 +264,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bestScoresLabel.text = bestScoresText
         
         addChild(bestScoresLabel)
-        
-        junkTimer?.invalidate()
-        junkTimer = nil
-        
-        energyTimer?.invalidate()
-        energyTimer = nil
         
         // Each new game scene is slower loosing FPS
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
