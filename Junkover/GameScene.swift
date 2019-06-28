@@ -12,6 +12,7 @@ import CoreMotion
 @objcMembers
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let motionManager = CMMotionManager()
+    
     var junkTimer: Timer?
     var energyTimer: Timer?
 
@@ -37,6 +38,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     let soundOfExplosion = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
     let soundOFBonus = SKAction.playSoundFileNamed("bonus.wav", waitForCompletion: false)
+    
+    var gameCounter = 1
 
     override func didMove(to view: SKView) {
 
@@ -226,6 +229,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameOverLabel.zPosition = 5
         gameOverLabel.position.y = 0
         gameOverLabel.text = "Game Over"
+        
+        if gameCounter > 1 {
+            gameOverLabel.text?.append(" (\(gameCounter))")
+        }
+        
         addChild(gameOverLabel)
         
         let bestScoresLabel = SKLabelNode(fontNamed: "AvenirNextCondensed-Bold")
@@ -254,15 +262,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(bestScoresLabel)
         
+        junkTimer = nil
+        energyTimer = nil
+        
         // Each new game scene is slower loosing FPS
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            // Trying to clean up with the hope to reduce performance degradation... but it is not helping.
-            if let view = self.view {
-                view.scene?.removeAllChildren()
-                view.scene?.removeFromParent()
-            }
             if let scene = GameScene(fileNamed: "GameScene") {
                 scene.scaleMode = .aspectFill
+                scene.gameCounter = self.gameCounter + 1
                 self.view?.presentScene(scene)
             }
         }
