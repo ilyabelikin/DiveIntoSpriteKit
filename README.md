@@ -1,5 +1,5 @@
 # DiveIntoSpriteKit
-A basic game based on the Project 1 from [Dive Into SpriteKit book by Paul Hudson](https://www.hackingwithswift.com/store/dive-into-spritekit)
+A basic game based on the Project 1 from [Dive Into SpriteKit book by Paul Hudson].(https://www.hackingwithswift.com/store/dive-into-spritekit)
 
 # Changes
 
