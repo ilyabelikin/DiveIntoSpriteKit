@@ -5,7 +5,7 @@ A basic game based on the Project 1 from [Dive Into SpriteKit book by Paul Hudso
 
 ## Timer
 
-The instructions in the book guide you to use the Timer. If you do so, you have to also use .invalidate() on the timer or you will get accumulating performance degradation later. See https://stackoverflow.com/questions/56794968/performance-issue-with-dive-into-spritekit-example-code
+The instructions in the book guide you to use the `Timer`. If you do so, you have to also use `.invalidate()` on the timer or you will get accumulating performance degradation later. See https://stackoverflow.com/questions/56794968/performance-issue-with-dive-into-spritekit-example-code
 
 ## categoryBitMask
 
