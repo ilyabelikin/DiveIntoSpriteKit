@@ -277,5 +277,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+
+deinit {
+    print("-= Game scene deinit =-")
+}
+
 }
 
