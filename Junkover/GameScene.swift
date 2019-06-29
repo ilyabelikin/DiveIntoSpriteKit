@@ -285,9 +285,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
 
-deinit {
-    print("-= Game scene deinit =-")
-}
-
+    // MARK: TODO relese scenes!
+    deinit {
+        print("-= Game scene deinit =-")
+    }
 }
 
