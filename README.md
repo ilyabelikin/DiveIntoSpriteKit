@@ -9,7 +9,7 @@ The instructions in the book guide you to use the `Timer`. If you do so, you hav
 ### Physics body shape
 SpriteKit seems to have an issue making an alpha-based outline for physical body for junk sattelite. As a result collision detection is off. You can see the physics bodies by switching `view.showsPhysics = true`.
 
-We made a new version of the graphical asset to see if it is related to the way it's done, but it seems unrelated. No we are asking for help: [SKSpriteNode physics body peculiar shape issue](https://stackoverflow.com/questions/56817220/skspritenode-physics-body-peculiar-shape-issue)
+We made a new version of the graphical asset to see if it is related to the way it's done, but it seems unrelated. No we are asking for help: [SpriteKit: physics body “alpha” shape issues](https://stackoverflow.com/questions/56817220/skspritenode-physics-body-peculiar-shape-issue)
 
 ### Memory leak
 Fixing the timer is solving main performance drag, but the app is still gobbling memory over time. We are looking for a solution.
