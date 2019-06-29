@@ -11,6 +11,9 @@ The instructions in the book guide you to use the `Timer`. If you do so, you hav
 
 The book is not going into details about the bitmask nature of categoryBitMask. Working in parallel on two version with my son we both got confused at some point. Learning a bit more about bitmasks helped: they are not just numbers, but a neat way to use bits for markers and, later, comparison. Each category is one of 32 bits set to 1. You can use `0x1 << 1, 0x1 << 2, 0x1 << 3` to set the bits and `|` to merge categories for contactTestBitMask and collisionBitMask. 
 
+## Explosion direction
+To make the gave over the moment a bit nicer, we set the velocity of the node player collided with to the explosion particle effect.
+
 ## Spinning
 
 When we allowed a player to survive collisions spinning became a problem. `player.physicsBody?.allowsRotation = false` could be a radical way to deal with it. In our case we are trying to make z-axis stabilization work applying torque in the oposite to spinning direction. 
