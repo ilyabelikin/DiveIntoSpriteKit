@@ -14,6 +14,7 @@
 		51C6E4C91F951D59001794D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C6E4C71F951D59001794D5 /* Main.storyboard */; };
 		51C6E4CB1F951D59001794D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C6E4CA1F951D59001794D5 /* Assets.xcassets */; };
 		51C6E4CE1F951D59001794D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C6E4CC1F951D59001794D5 /* LaunchScreen.storyboard */; };
+		AC22660C22C7706100033915 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC22660B22C7706100033915 /* README.md */; };
 		AC7C2D6822BA60F10088135E /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC7C2D6722BA60F10088135E /* Explosion.sks */; };
 		AC7C2D7222BA82AC0088135E /* bonus.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC7C2D6F22BA768E0088135E /* bonus.wav */; };
 		AC7C2D7322BA82AF0088135E /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC7C2D6E22BA768E0088135E /* explosion.wav */; };
@@ -30,6 +31,7 @@
 		51C6E4CA1F951D59001794D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51C6E4CD1F951D59001794D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51C6E4CF1F951D59001794D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC22660B22C7706100033915 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		AC7C2D6722BA60F10088135E /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		AC7C2D6E22BA768E0088135E /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
 		AC7C2D6F22BA768E0088135E /* bonus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bonus.wav; path = "/Users/ilyabelikin/Library/CloudStorage/iCloud Drive/Documents/Repos/DiveIntoSpriteKit/Junkover/Sounds/bonus.wav"; sourceTree = "<absolute>"; };
@@ -77,6 +79,7 @@
 				51C6E4CA1F951D59001794D5 /* Assets.xcassets */,
 				51C6E4CC1F951D59001794D5 /* LaunchScreen.storyboard */,
 				51C6E4CF1F951D59001794D5 /* Info.plist */,
+				AC22660B22C7706100033915 /* README.md */,
 			);
 			path = Junkover;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				51C6E4C91F951D59001794D5 /* Main.storyboard in Resources */,
 				51C6E4C01F951D59001794D5 /* GameScene.sks in Resources */,
 				51C6E4CB1F951D59001794D5 /* Assets.xcassets in Resources */,
+				AC22660C22C7706100033915 /* README.md in Resources */,
 				51C6E4CE1F951D59001794D5 /* LaunchScreen.storyboard in Resources */,
 				AC7C2D6822BA60F10088135E /* Explosion.sks in Resources */,
 			);

@@ -13,5 +13,4 @@ The book is not going into details about the bitmask nature of categoryBitMask. 
 
 ## Spinning
 
-When we allowed a player to survive collisions spinning became a problem. `player.physicsBody?.allowsRotation = false` could a radical way to deal with it. In our case we trying to make z-axis stabilization work.
-
+When we allowed a player to survive collisions spinning became a problem. `player.physicsBody?.allowsRotation = false` could be a radical way to deal with it. In our case we are trying to make z-axis stabilization work applying torque in the oposite to spinning direction. 

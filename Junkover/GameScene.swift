@@ -64,10 +64,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         motionManager.startAccelerometerUpdates()
         physicsWorld.contactDelegate = self
         
-        let background = SKSpriteNode(imageNamed: "space.jpg")
-        background.zPosition = -1
-        addChild(background)
-        
         scoreLabel.zPosition = 2
         scoreLabel.position.y = 300
         addChild(scoreLabel)
@@ -120,9 +116,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.velocity = newV
             
             // zRotation stabilization, not ideal but kind of works
+            // MARK: TODO: make it more reliable
             if player.zRotation > 0.08 || player.zRotation < -0.08  {
-                let direction = player.zRotation > 0 ? -0.02 : 0.02
-                player.physicsBody?.applyTorque(CGFloat(direction))
+                let direction : CGFloat = player.zRotation > 0 ? -0.02 : 0.02
+                player.physicsBody?.applyTorque(direction)
             }
             else {
                 player.zRotation = 0
@@ -213,10 +210,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
        
-        // TODO: calculate impact and based damandge on it
-        //if let v = node.physicsBody?.velocity {
+        // MARK: TODO: calculate the impact force and use it to determine the damadge
+        // if let v = node.physicsBody?.velocity {
         //
-        //}
+        // }
         player.alpha -= 0.1
        
         if player.alpha < 0 {
@@ -279,7 +276,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(bestScoresLabel)
         
-        // Each new game scene is slower loosing FPS
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             if let scene = GameScene(fileNamed: "GameScene") {
                 scene.scaleMode = .aspectFill
