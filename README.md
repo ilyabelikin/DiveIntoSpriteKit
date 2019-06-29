@@ -20,3 +20,6 @@ We added the top 3 scores with saving in UserDefaults.
 
 ## Physics body shape
 At least in iOS13, the physics body shape with default alpha seems to be awfully broken for the space-junk and when set in scene editor in general. We made a new version of the graphical asset to see if it is related to the way it's done, but it seems unrelated.
+
+## Using the scene editor
+After watching [Best Practices for Building SpriteKit Games](https://developer.apple.com/videos/play/wwdc2014/608/) we are looking into using Scene editor to define the basic structure.
