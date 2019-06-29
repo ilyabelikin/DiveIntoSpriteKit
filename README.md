@@ -14,3 +14,9 @@ The book is not going into details about the bitmask nature of categoryBitMask. 
 ## Spinning
 
 When we allowed a player to survive collisions spinning became a problem. `player.physicsBody?.allowsRotation = false` could be a radical way to deal with it. In our case we are trying to make z-axis stabilization work applying torque in the oposite to spinning direction. 
+
+## Top 3
+We added the top 3 scores with saving in UserDefaults.
+
+## Physics body shape
+At least in iOS13, the physics body shape with default alpha seems to be awfully broken for the space-junk and when set in scene editor in general. We made a new version of the graphical asset to see if it is related to the way it's done, but it seems unrelated.
