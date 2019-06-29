@@ -34,7 +34,7 @@
 		AC22660B22C7706100033915 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		AC7C2D6722BA60F10088135E /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		AC7C2D6E22BA768E0088135E /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
-		AC7C2D6F22BA768E0088135E /* bonus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bonus.wav; path = "/Users/ilyabelikin/Library/CloudStorage/iCloud Drive/Documents/Repos/DiveIntoSpriteKit/Junkover/Sounds/bonus.wav"; sourceTree = "<absolute>"; };
+		AC7C2D6F22BA768E0088135E /* bonus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bonus.wav; path = ../../../../Repos/DiveIntoSpriteKit/Junkover/Sounds/bonus.wav; sourceTree = "<group>"; };
 		AC8DE63922BA36D60051EA79 /* SpaceDust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceDust.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
