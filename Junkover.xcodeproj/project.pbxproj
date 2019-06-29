@@ -14,8 +14,9 @@
 		51C6E4C91F951D59001794D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C6E4C71F951D59001794D5 /* Main.storyboard */; };
 		51C6E4CB1F951D59001794D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C6E4CA1F951D59001794D5 /* Assets.xcassets */; };
 		51C6E4CE1F951D59001794D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51C6E4CC1F951D59001794D5 /* LaunchScreen.storyboard */; };
+		AC22660C22C7706100033915 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC22660B22C7706100033915 /* README.md */; };
+		AC22661622C79ECD00033915 /* bonus.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC22661522C79ECD00033915 /* bonus.wav */; };
 		AC7C2D6822BA60F10088135E /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC7C2D6722BA60F10088135E /* Explosion.sks */; };
-		AC7C2D7222BA82AC0088135E /* bonus.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC7C2D6F22BA768E0088135E /* bonus.wav */; };
 		AC7C2D7322BA82AF0088135E /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC7C2D6E22BA768E0088135E /* explosion.wav */; };
 		AC8DE63A22BA36D60051EA79 /* SpaceDust.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC8DE63922BA36D60051EA79 /* SpaceDust.sks */; };
 /* End PBXBuildFile section */
@@ -30,9 +31,10 @@
 		51C6E4CA1F951D59001794D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51C6E4CD1F951D59001794D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51C6E4CF1F951D59001794D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC22660B22C7706100033915 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		AC22661522C79ECD00033915 /* bonus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bonus.wav; sourceTree = "<group>"; };
 		AC7C2D6722BA60F10088135E /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		AC7C2D6E22BA768E0088135E /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
-		AC7C2D6F22BA768E0088135E /* bonus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bonus.wav; path = "/Users/ilyabelikin/Library/CloudStorage/iCloud Drive/Documents/Repos/DiveIntoSpriteKit/Junkover/Sounds/bonus.wav"; sourceTree = "<absolute>"; };
 		AC8DE63922BA36D60051EA79 /* SpaceDust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpaceDust.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				51C6E4CA1F951D59001794D5 /* Assets.xcassets */,
 				51C6E4CC1F951D59001794D5 /* LaunchScreen.storyboard */,
 				51C6E4CF1F951D59001794D5 /* Info.plist */,
+				AC22660B22C7706100033915 /* README.md */,
 			);
 			path = Junkover;
 			sourceTree = "<group>";
@@ -84,7 +87,7 @@
 		AC7C2D6D22BA76870088135E /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				AC7C2D6F22BA768E0088135E /* bonus.wav */,
+				AC22661522C79ECD00033915 /* bonus.wav */,
 				AC7C2D6E22BA768E0088135E /* explosion.wav */,
 			);
 			path = Sounds;
@@ -149,12 +152,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC7C2D7222BA82AC0088135E /* bonus.wav in Resources */,
 				AC8DE63A22BA36D60051EA79 /* SpaceDust.sks in Resources */,
 				AC7C2D7322BA82AF0088135E /* explosion.wav in Resources */,
+				AC22661622C79ECD00033915 /* bonus.wav in Resources */,
 				51C6E4C91F951D59001794D5 /* Main.storyboard in Resources */,
 				51C6E4C01F951D59001794D5 /* GameScene.sks in Resources */,
 				51C6E4CB1F951D59001794D5 /* Assets.xcassets in Resources */,
+				AC22660C22C7706100033915 /* README.md in Resources */,
 				51C6E4CE1F951D59001794D5 /* LaunchScreen.storyboard in Resources */,
 				AC7C2D6822BA60F10088135E /* Explosion.sks in Resources */,
 			);
