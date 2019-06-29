@@ -13,7 +13,7 @@ import CoreMotion
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let motionManager = CMMotionManager()
 
-    let player = SKSpriteNode(imageNamed: "player-rocket.png")
+    var player = SKSpriteNode(imageNamed: "player-rocket.png")
     
     let scoreLabel = SKLabelNode(fontNamed: "AvenirNextCondensed-Bold")
     
@@ -29,15 +29,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let playerInfo = UserDefaults.standard
     
-    let playerCategory: UInt32 = 0x1 << 0
-    let junkCategory: UInt32 = 0x1 << 1
-    let bonusCategory: UInt32 = 0x1 << 2
+    let playerCategory: UInt32 = 0x1 << 0 // 1
+    let junkCategory: UInt32 = 0x1 << 1   // 2
+    let bonusCategory: UInt32 = 0x1 << 2  // 4
 
     let soundOfExplosion = SKAction.playSoundFileNamed("explosion.wav", waitForCompletion: false)
     let soundOFBonus = SKAction.playSoundFileNamed("bonus.wav", waitForCompletion: false)
     
     var gameCounter = 1
 
+    
+    override func sceneDidLoad() {
+        // Using player node defined in the GameScene
+        if let player = childNode(withName: "player") as? SKSpriteNode {
+            self.player = player
+        }
+        
+        // Re-setting the physical body, because what GameScene does by default is utterly ridiculous
+        player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
+        
+        // Now all of these set in scene editor
+        //player.zPosition = 0
+        //player.physicsBody?.categoryBitMask = playerCategory
+        //player.physicsBody?.contactTestBitMask = playerCategory | junkCategory | bonusCategory
+        //player.physicsBody?.collisionBitMask = junkCategory
+        // player.physicsBody?.angularDamping = 0.25
+        // player.physicsBody?.density = density
+        
+    }
+    
+    
     override func didMove(to view: SKView) {
 
         motionManager.startAccelerometerUpdates()
@@ -60,16 +81,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addChild(particles)
         }
         
-        player.position.x = -350
-        player.zPosition = 0
-        player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.size)
-        player.physicsBody?.categoryBitMask = playerCategory
-        player.physicsBody?.contactTestBitMask = playerCategory | junkCategory | bonusCategory
-        player.physicsBody?.collisionBitMask = junkCategory
-        player.physicsBody?.angularDamping = 0.25
-        player.physicsBody?.density = density
-        
-        addChild(player)
         
         run(SKAction.repeatForever(SKAction.sequence([
             SKAction.run(createEnemy),
@@ -103,14 +114,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //            Arcade style controls
 //            player.position.x -= changeX
 //            player.position.y += changeY
-            
+    
             let currentV = player.physicsBody!.velocity
             let newV = CGVector(dx: currentV.dx - changeX, dy: currentV.dy + changeY )
             player.physicsBody?.velocity = newV
             
             // zRotation stabilization, not ideal but kind of works
-            if player.zRotation > 0.06 || player.zRotation < -0.06  {
-                let direction = player.zRotation > 0 ? -0.01 : 0.01
+            if player.zRotation > 0.08 || player.zRotation < -0.08  {
+                let direction = player.zRotation > 0 ? -0.02 : 0.02
                 player.physicsBody?.applyTorque(CGFloat(direction))
             }
             else {
@@ -132,7 +143,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createEnemy() {
-        let sprite = SKSpriteNode(imageNamed: "space-junk")
+        let sprite = SKSpriteNode(imageNamed: "satellite")
         
         let spawnRect = allowedRect.insetBy(dx: 50, dy: 50)
         sprite.position = CGPoint(x: Int(spawnRect.maxX),
@@ -141,6 +152,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.zPosition = 0
         
         sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
+        
         sprite.physicsBody?.linearDamping = 0
         sprite.physicsBody?.density = density
         
@@ -149,7 +161,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.collisionBitMask = playerCategory | junkCategory | bonusCategory
 
         
-        sprite.physicsBody?.velocity = CGVector(dx: CGFloat(-Int.random(in: 100...800)), dy: CGFloat(Int.random(in: -8...8)))
+        sprite.physicsBody?.velocity = CGVector(dx: -CGFloat.random(in: 100...800), dy: CGFloat.random(in: -8...8))
+        
+        sprite.zRotation = CGFloat.random(in: -10...10)
         
         addChild(sprite)
     }
@@ -163,7 +177,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.name = "bonus"
         sprite.zPosition = 0
         
-        sprite.physicsBody = SKPhysicsBody(texture: sprite.texture!, size: sprite.size)
+        sprite.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.height / 2)
         sprite.physicsBody?.linearDamping = 0
         sprite.physicsBody?.density = 1
 
@@ -172,7 +186,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.collisionBitMask = junkCategory | bonusCategory
 
         
-        sprite.physicsBody?.velocity = CGVector(dx: CGFloat(-Int.random(in: 250...900)), dy: CGFloat(Int.random(in: -25...25)))
+        sprite.physicsBody?.velocity = CGVector(dx: -CGFloat.random(in: 250...900), dy: CGFloat.random(in: -25...25))
         
         addChild(sprite)
         
