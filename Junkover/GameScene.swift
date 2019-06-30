@@ -276,6 +276,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addChild(bestScoresLabel)
         
+        removeAllActions()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             if let scene = GameScene(fileNamed: "GameScene") {
                 scene.scaleMode = .aspectFill
